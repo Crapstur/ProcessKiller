@@ -11,6 +11,7 @@ import datetime
 logging.basicConfig(filename='/var/log/ProcessKiller/ProcessKiller.log', level=logging.INFO)
 logging.info(str(datetime.datetime.today()) + ' : ProcessKiller START')
 
+os.chdir('/home/userbot/ProcessKiller/')
 
 def findProcessIdByName(regex):
     listOfProcessObjects = []
