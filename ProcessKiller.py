@@ -32,20 +32,36 @@ try:
     listOfProcess_cyber = findProcessIdByName(r'.*edt_cyber.py')
     listOfProcess_gen = findProcessIdByName(r'.*edt_gen.py')
     listOfProcess_getpdf = findProcessIdByName(r'.*getpdf.py')
+    listOfProcess_NoteBot = findProcessIdByName(r'.*NoteBot.py')
 
-    if len(listOfProcess_aA) == 0 and len(listOfProcess_aB) == 0 and len(listOfProcess_cyber) == 0 and len(listOfProcess_gen) == 0 and len(listOfProcess_getpdf) == 0:
-        process = r".*chrome.*"
-        listOfProcesschrome = findProcessIdByName(process)
-        nb_process = len(listOfProcesschrome)
-        if nb_process > 0 :
-            for elem in listOfProcesschrome:
-                processID = elem['pid']
-                os.kill(processID,9)
-            logging.info(str(datetime.datetime.today()) + ' : ' + str(nb_process) + ' processus chrome fermés')
-        else :
-            logging.info(str(datetime.datetime.today()) + ' : Il n\'y a aucun processus chrome')
+    if len(listOfProcess_aA) == 0:
+        if len(listOfProcess_aB) == 0:
+            if len(listOfProcess_cyber) == 0:
+                if len(listOfProcess_gen) == 0:
+                    if len(listOfProcess_getpdf) == 0:
+                        if len(listOfProcess_NoteBot) == 0:
+                            process = r".*chrome.*"
+                            listOfProcesschrome = findProcessIdByName(process)
+                            nb_process = len(listOfProcesschrome)
+                            if nb_process > 0 :
+                                for elem in listOfProcesschrome:
+                                    processID = elem['pid']
+                                    os.kill(processID,9)
+                                logging.info(str(datetime.datetime.today()) + ' : ' + str(nb_process) + ' processus chrome fermés')
+                            else :
+                                logging.info(str(datetime.datetime.today()) + ' : Il n\'y a aucun processus chrome')
+                        else:
+                            logging.info(str(datetime.datetime.today()) + ' : NoteBot.py utilise chrome !')
+                    else:
+                        logging.info(str(datetime.datetime.today()) + ' : getpdf.py utilise chrome !')
+                else:
+                    logging.info(str(datetime.datetime.today()) + ' : edt_gen.py utilise chrome !')
+            else:
+                logging.info(str(datetime.datetime.today()) + ' : edt_cyber.py utilise chrome !')
+        else:
+            logging.info(str(datetime.datetime.today()) + ' : edt_asurB utilise chrome !')
     else:
-        logging.info(str(datetime.datetime.today()) + ' : Un programme python utilise chrome !')
+        logging.info(str(datetime.datetime.today()) + ' : edt_asurA utilise chrome !')
 except:
     logging.error(str(datetime.datetime.today()) + ' : !! ERROR !!')
 
