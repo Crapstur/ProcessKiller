@@ -9,7 +9,7 @@ import logging
 import datetime
 
 logging.basicConfig(filename='/var/log/ProcessKiller/ProcessKiller.log', level=logging.INFO)
-logging.info(str(datetime.datetime.today()) + ' : ProcessKiller START')
+logging.warning(str(datetime.datetime.today()) + ' : ProcessKiller START')
 
 os.chdir('/home/userbot/ProcessKiller/')
 
@@ -59,9 +59,9 @@ try:
             else:
                 logging.info(str(datetime.datetime.today()) + ' : edt_cyber.py utilise chrome !')
         else:
-            logging.info(str(datetime.datetime.today()) + ' : edt_asurB utilise chrome !')
+            logging.info(str(datetime.datetime.today()) + ' : edt_asurB.py utilise chrome !')
     else:
-        logging.info(str(datetime.datetime.today()) + ' : edt_asurA utilise chrome !')
+        logging.info(str(datetime.datetime.today()) + ' : edt_asurA.py utilise chrome !')
 except:
     logging.error(str(datetime.datetime.today()) + ' : !! ERROR !!')
 
