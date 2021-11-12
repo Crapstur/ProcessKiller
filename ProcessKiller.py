@@ -65,4 +65,4 @@ try:
 except:
     logging.error(str(datetime.datetime.today()) + ' : !! ERROR !!')
 
-logging.info(str(datetime.datetime.today()) + ' : ProcessKiller END')
+logging.warning(str(datetime.datetime.today()) + ' : ProcessKiller END')
