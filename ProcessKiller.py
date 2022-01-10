@@ -62,6 +62,7 @@ try:
             logging.info(str(datetime.datetime.today()) + ' : edt_asurB.py utilise chrome !')
     else:
         logging.info(str(datetime.datetime.today()) + ' : edt_asurA.py utilise chrome !')
+    logging.info(str(datetime.datetime.today()) + ' : Finished without error')
 except:
     logging.error(str(datetime.datetime.today()) + ' : !! ERROR !!')
 
